@@ -3,7 +3,7 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-index = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
+index = fs.readFileSync('index.html');
 
 
 app.get('/', function(request, response) {
