@@ -3,17 +3,11 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-index = fs.readFile('/home/ubuntu/bitstarter/index.html', function (err, data){
-    if(err) throw err;
-    console.log(data);
-});
+index = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
 
-buffer = new Buffer(index);
- 
-var buffer = new Buffer(
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString('utf-8'));
+  response.send(index.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
